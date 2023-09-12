@@ -1,0 +1,44 @@
+1、BgSubTest.py
+由于测试opencv的各种背景减除算法，输入为mp4，输出为黑白MP4
+2、ColorCluster.py
+颜色聚类算法，可以给图片减色，输入输出为图片
+3、ColorCluster2.py
+颜色聚类统计图片颜色，输出颜色条形图
+4、extracthuman.py
+rembg减除背景提取人像
+5、SilhouetteTest.py
+对背景减除得到的灰度图进行轮廓处理，希望得到人体剪影
+6、ColorCluster3.py
+ColorCluster太乱了，重新搞
+7、WHtu.py 调整图像大小一致.py
+抠图用
+8、两帧差法.py  nms.py
+三帧差法获取剪影, nms配合
+9、DrawContour.py
+绘制轮廓
+10、imfill.py  imfill2.py
+用于背景减除图像（KNN）的填充
+imfill2.py 用于修改测试
+
+11、silextract.py
+提取剪影类 ，调用类 imfill.py
+
+12、multiprocess.py
+测试多进程
+13、silextract-test.py
+用于修改测试
+
+----------------------------------
+新增边缘检测、帮助KNN弥合边框
+目前Canny算子最合适
+
+思路整理
+提取轮廓
+背景减除
+rembg前景提取
+
+新流程：
+1、扣图作为分割
+2、化为灰度图颜色聚类
+3、灰度图和KNN相乘
+3、黑色区域颜色提取，白色区域消除
